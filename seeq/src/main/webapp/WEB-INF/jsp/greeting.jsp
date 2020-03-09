@@ -9,9 +9,9 @@
 		<h1>Hello, Derek! This is your program!!</h1>
 		
 		<ul>
-			<li><a href="#">View All Stations Within Radius</a></li>
+			<li><a href="allStations">View All Stations</a></li>
             <li><a href="#">Search Nearby Stations By Type</a></li>
-
+			<li><a href="#">Add a New Station</a></li>
 		
 		
 		

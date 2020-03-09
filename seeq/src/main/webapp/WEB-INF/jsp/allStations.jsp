@@ -8,14 +8,22 @@
 	<body>
 		<h1>All Stations in the Database are below</h1>
 		
-		<ul>
-			<li><a href="#">View All Stations Within Radius</a></li>
-            <li><a href="#">Search Nearby Stations By Type</a></li>
-
+		<table>
+			<tr>
+				<th>Call Sign</th>
+				<th>Frequency</th>
+				<th>Station Type</th>
+			</tr>
+			
+			<c:forEach items="${stations}" var="station">
+				<tr>
+					<td>${station.callsign}</td>
+					<td>${station.frequency}</td>
+					<td>${station.type}</td>
+				</tr>
+			</c:forEach>
 		
-		
-		
-		</ul>
+		</table>
 		
 		
 	</body>
