@@ -11,7 +11,7 @@
 		<ul>
 			<li><a href="allStations">View All Stations</a></li>
             <li><a href="#">Search Nearby Stations By Type</a></li>
-			<li><a href="#">Add a New Station</a></li>
+			<li><a href="addStation">Add a New Station</a></li>
 		
 		
 		
