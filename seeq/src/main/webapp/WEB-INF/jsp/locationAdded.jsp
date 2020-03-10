@@ -2,7 +2,7 @@
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 		
-		<h1>This Location Stored Temporarily</h1>
+		<h2>This location ${resultString}</h2>
 		
 		<table>
 			<tr>

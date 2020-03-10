@@ -22,7 +22,8 @@ public class JdbcLocationDao implements LocationDao {
 
 	@Override
 	public void save(Location location) {
-		// TODO Auto-generated method stub
+		String sqlInsertLocation = "INSERT INTO location(nickname, lat, lon) VALUES(?, ?, ?)";
+		jdbcTemplate.update(sqlInsertLocation, location.getNickname(), location.getLatitude(), location.getLongitude());
 		
 	}
 

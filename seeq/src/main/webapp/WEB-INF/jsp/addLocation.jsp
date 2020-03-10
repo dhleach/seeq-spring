@@ -19,7 +19,8 @@
 					<input type="text" name="longitude" id="longitude" />
 				</div>
 
-				<input type="submit" value="Add Your Location">
+				<input type="submit" name="add" value="Use a Temporary Location">
+				<input type="submit" name="save" value="Save The Location">
 			</div>
 		</form>
 

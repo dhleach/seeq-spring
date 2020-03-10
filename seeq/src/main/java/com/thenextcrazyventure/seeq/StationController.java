@@ -3,6 +3,7 @@ package com.thenextcrazyventure.seeq;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,10 +66,20 @@ public class StationController {
 		return"addLocation";
 	}
 	
+	@RequestMapping(path="/locationAdded", method = RequestMethod.GET)
+	public String displayLocationConfirmationPage(ModelMap map) {
+		return"locationAdded";
+	}
+	
 	@RequestMapping(path="/addLocation", method = RequestMethod.POST)
-	public String addLocationToMemoryAndReturnHome(@ModelAttribute("location") Location myLocation, HttpSession session) {
-		
+	public String addLocationToMemoryAndReturnHome(@ModelAttribute("location") Location myLocation, HttpServletRequest request, RedirectAttributes flash, HttpSession session) {
+		if(request.getParameter("save") != null) {
+			locationDao.save(myLocation);
+			session.setAttribute("resultString", "saved to the database.");
+		} else {
+			session.setAttribute("resultString", "saved temporarily.");
+		}
 		session.setAttribute("myLocation", myLocation);
-		return "locationAdded";
+		return "redirect:/locationAdded";
 	}
 }
