@@ -3,6 +3,8 @@ package com.thenextcrazyventure.seeq;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -11,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.thenextcrazyventure.seeq.model.Location;
+import com.thenextcrazyventure.seeq.model.LocationDao;
 import com.thenextcrazyventure.seeq.model.Station;
 import com.thenextcrazyventure.seeq.model.StationDao;
 
@@ -19,6 +23,8 @@ public class StationController {
 
 	@Autowired
 	private StationDao stationDao;
+	@Autowired
+	private LocationDao locationDao;
 	
 	@RequestMapping("/allStations")
 	public String displayAllStations(ModelMap map) {
@@ -44,5 +50,25 @@ public class StationController {
 	@RequestMapping(path="/stationAdded", method = RequestMethod.GET)
 	public String displaySuccessfulAdd() {
 		return "stationAdded";
+	}
+	
+	@RequestMapping(path="/viewLocations", method = RequestMethod.GET)
+	public String displayAllLocations(ModelMap map) {
+		List<Location> allLocations = new ArrayList<Location>();
+		allLocations = locationDao.getAllLocations();
+		map.addAttribute("locations", allLocations);
+		return "allLocations";
+	}
+	
+	@RequestMapping(path="/addLocation", method = RequestMethod.GET)
+	public String displayAddLocationPage() {
+		return"addLocation";
+	}
+	
+	@RequestMapping(path="/addLocation", method = RequestMethod.POST)
+	public String addLocationToMemoryAndReturnHome(@ModelAttribute("location") Location myLocation, HttpSession session) {
+		
+		session.setAttribute("myLocation", myLocation);
+		return "locationAdded";
 	}
 }

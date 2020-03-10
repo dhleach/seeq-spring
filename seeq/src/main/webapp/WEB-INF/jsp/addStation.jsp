@@ -2,7 +2,7 @@
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 	
-		<h1>All a New Station to the Database!</h1>
+		<h1>Add a New Station to the Database!</h1>
 		<c:url var="formAction" value="/addStation" />
 		<form method="POST" action="${formAction}" modelAttribute="station">
 			<div>
