@@ -3,9 +3,29 @@
 <!DOCTYPE html>
 <html>
 	<head>
+	    <meta charset="UTF-8">
 		<title>Add a Station</title>
+		<c:url value="/css/seeq.css" var="cssHref" />
+    	<link rel="stylesheet" href="${cssHref}">
 	</head>
+	
 	<body>
+		<header>
+			<c:url value="/" var="homePageHref" />
+			<c:url value="/img/seek.png" var="logoSrc" />
+			<a href="${homePageHref}">
+				<img src="${logoSrc}" alt="Seeq Logo" />
+			</a>
+		</header>
+		
+		<nav>
+			<ul>
+				<li><a href="allStations">View All Stations</a></li>
+	            <li><a href="#">Search Nearby Stations By Type</a></li>
+				<li><a href="addStation">Add a New Station</a></li>
+			</ul>
+		</nav>
+	
 		<h1>All a New Station to the Database!</h1>
 		<c:url var="formAction" value="/addStation" />
 		<form method="POST" action="${formAction}" modelAttribute="station">
