@@ -9,6 +9,7 @@
 				<th>Call Sign</th>
 				<th>Frequency</th>
 				<th>Station Type</th>
+				<th>Distance (mi)</th>
 			</tr>
 			
 			<c:forEach items="${stations}" var="station">
@@ -16,6 +17,7 @@
 					<td>${station.callsign}</td>
 					<td>${station.frequency}</td>
 					<td>${station.type}</td>
+					<td>${station.location.milesTo(myLocation)}</td>
 				</tr>
 			</c:forEach>
 		

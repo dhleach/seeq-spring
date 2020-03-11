@@ -41,8 +41,13 @@ public class JdbcLocationDao implements LocationDao {
 
 	@Override
 	public Location getLocationById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Location myLocation = new Location();
+		String sqlSelectLocationById = "SELECT * FROM location WHERE location.id = ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectLocationById, id);
+		if(results.next()) {
+			myLocation = mapRowToLocation(results);
+		}
+		return myLocation;
 	}
 
 	@Override

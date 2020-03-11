@@ -9,6 +9,7 @@
 				<th>Nickname</th>
 				<th>Latitude</th>
 				<th>Longitude</th>
+				<th>Update Your Location?</th>
 			</tr>
 			
 			<c:forEach items="${locations}" var="location">
@@ -16,6 +17,7 @@
 					<td>${location.nickname}</td>
 					<td>${location.latitude}</td>
 					<td>${location.longitude}</td>
+					<td><a href="updateLocation?id=${location.id}">Update</a></td>
 				</tr>
 			</c:forEach>
 		

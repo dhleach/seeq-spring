@@ -12,6 +12,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.thenextcrazyventure.seeq.model.Location;
@@ -64,6 +65,13 @@ public class StationController {
 	@RequestMapping(path="/addLocation", method = RequestMethod.GET)
 	public String displayAddLocationPage() {
 		return"addLocation";
+	}
+	
+	@RequestMapping(path="/updateLocation", method = RequestMethod.GET)
+	public String updateSessionLocationAndReturnHome(@RequestParam int id, HttpSession session) {
+		Location newLocation = locationDao.getLocationById(id);
+		session.setAttribute("myLocation", newLocation);
+		return"greeting";
 	}
 	
 	@RequestMapping(path="/locationAdded", method = RequestMethod.GET)

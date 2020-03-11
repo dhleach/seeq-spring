@@ -22,10 +22,13 @@
 		
 		<nav>
 			<ul>
+				<li><a href="viewLocations">View/Choose an Existing Location (DO THIS FIRST)</a></li>
+				<li><a href="addLocation">Create a custom location with or without saving it to database</a></li>
 				<li><a href="allStations">View All Stations</a></li>
-	            <li><a href="#">Search Nearby Stations By Type</a></li>
-				<li><a href="addStation">Add a New Station</a></li>
-				<li><a href="addLocation">Input your Location</a></li>
-				<li><a href="viewLocations">View Existing Locations</a></li>
+	            <li><a href="addStation">Add a New Station</a></li>
+	            <li><a href="#">Search Nearby Stations By Type (COMING SOON)</a></li>
+				
+
+
 			</ul>
 		</nav>

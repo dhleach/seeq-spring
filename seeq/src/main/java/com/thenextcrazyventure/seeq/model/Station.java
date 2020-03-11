@@ -11,8 +11,23 @@ public class Station {
 	private String country;
 	private String lat;
 	private String lon;
+	private Location location; //derived from lat and lon
 	
+
+
 	//getters and setters
+	public void setLocation() {
+		Location stationLocation = new Location();
+		stationLocation.setLatitude(this.lat);
+		stationLocation.setLongitude(this.lon);
+		stationLocation.setNickname(this.callsign);
+		this.location = stationLocation;
+	}
+	public Location getLocation() {
+		setLocation();
+		return this.location;
+	}
+	
 	public int getId() {
 		return id;
 	}
