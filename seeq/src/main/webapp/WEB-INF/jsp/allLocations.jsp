@@ -4,6 +4,10 @@
 		
 		<h1>All Locations in the Database are below</h1>
 		
+		<button class="location-button">
+			Use My Location (testing)
+		</button>
+		
 		<table>
 			<tr>
 				<th>Nickname</th>
@@ -22,5 +26,7 @@
 			</c:forEach>
 		
 		</table>
+		
+		<script src="js/myLocation.js"></script>
 		
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />
