@@ -70,8 +70,10 @@ public class StationController {
 	@RequestMapping(path="/updateLocation", method = RequestMethod.GET)
 	public String updateSessionLocationAndReturnHome(@RequestParam int id, HttpSession session) {
 		Location newLocation = locationDao.getLocationById(id);
+		newLocation.setDecLat();
+		newLocation.setDecLon();
 		session.setAttribute("myLocation", newLocation);
-		return"greeting";
+		return"redirect:/viewLocations";
 	}
 	
 	@RequestMapping(path="/locationAdded", method = RequestMethod.GET)

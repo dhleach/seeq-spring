@@ -7,7 +7,11 @@ public class Location {
 	private String nickname;
 	private String latitude;
 	private String longitude;
+	private double decLat;
+	private double decLon;
 	
+
+
 	public Location() {
 		
 	}
@@ -56,4 +60,19 @@ public class Location {
 		this.longitude = longitude;
 	}
 	
+	public double getDecLat() {
+		return decLat;
+	}
+
+	public void setDecLat() {
+		this.decLat = Distance.convert(this.latitude);
+	}
+
+	public double getDecLon() {
+		return decLon * -1;
+	}
+
+	public void setDecLon() {
+		this.decLon = Distance.convert(this.longitude);
+	}
 }
