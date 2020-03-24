@@ -20,10 +20,10 @@
 				<th>Update Your Location?</th>
 			</tr>
 			<tr>
-				<th>${myLocation.nickname}</th>
-				<th>${myLocation.latitude}</th>
-				<th>${myLocation.longitude}</th>
-				<th>(Current Location)</th>
+				<th>Your Location</th>
+				<th id="myLat">${myLocation.latitude}</th>
+				<th id="myLon">${myLocation.longitude}</th>
+				<th><a href="#">Update</a></th>
 			</tr>
 			<c:forEach items="${locations}" var="location">
 				<tr>

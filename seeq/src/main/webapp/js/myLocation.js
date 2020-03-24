@@ -9,6 +9,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
 			console.log("Lat: " + latLon.latitude);
 			console.log("Lon: " + latLon.longitude);
 			console.log("Accuracy in meters: " + latLon.accuracy);
+			let myLatBox = document.getElementById("myLat");
+			let myLonBox = document.getElementById("myLon");
+			myLatBox.innerText = latLon.latitude;
+			myLonBox.innerText = latLon.longitude;
 		});
 		
 	});
